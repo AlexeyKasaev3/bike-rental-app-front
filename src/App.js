@@ -1,25 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 
-function App() {
+function App({ store }) {
+  const dispatch = useDispatch();
+  dispatch({ type: 'FETCH_ALL_BICYCLES_DATA' });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>Hello World</div>
+    </Provider>
   );
 }
 
