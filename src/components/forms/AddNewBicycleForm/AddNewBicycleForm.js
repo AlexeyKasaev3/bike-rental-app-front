@@ -34,6 +34,8 @@ export const AddNewBicycleForm = () => {
 
       if (!values.rentPrice) {
         errors.rentPrice = 'Required';
+      } else if (!/^(\d|\.)*$/.test(values.rentPrice)) {
+        errors.rentPrice = 'only number and dots allowed';
       } else if (!/^\d{1,4}(\..*)?$/.test(values.rentPrice)) {
         errors.rentPrice = "price can't be bigger than 9999.99";
       } else if (!/^[1-9]\d{0,4}(\.\d{2})?$/.test(values.rentPrice)) {
