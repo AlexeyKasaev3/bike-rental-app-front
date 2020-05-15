@@ -1,5 +1,10 @@
-import { all } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga/effects';
+import {
+  fetchAllBicyclesData,
+  addNewBicycleRequest,
+} from './sagas/bicyclesSagas';
 
 export function* rootSaga() {
-  yield all([]);
+  yield takeEvery('FETCH_ALL_BICYCLES_DATA', fetchAllBicyclesData);
+  yield takeEvery('ADD_NEW_BIKE', addNewBicycleRequest);
 }
