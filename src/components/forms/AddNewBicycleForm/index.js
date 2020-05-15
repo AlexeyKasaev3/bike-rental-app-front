@@ -1,0 +1,1 @@
+export { AddNewBicycleForm } from './AddNewBicycleForm';
